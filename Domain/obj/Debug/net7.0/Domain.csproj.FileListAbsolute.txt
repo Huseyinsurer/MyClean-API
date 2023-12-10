@@ -34,3 +34,15 @@
 \\Mac\Home\Desktop\MY-CLEAN-API\Domain\obj\Debug\net7.0\refint\Domain.dll
 \\Mac\Home\Desktop\MY-CLEAN-API\Domain\obj\Debug\net7.0\Domain.pdb
 \\Mac\Home\Desktop\MY-CLEAN-API\Domain\obj\Debug\net7.0\ref\Domain.dll
+\\Mac\Home\Desktop\MinCleanAPI\Domain\bin\Debug\net7.0\Domain.deps.json
+\\Mac\Home\Desktop\MinCleanAPI\Domain\bin\Debug\net7.0\Domain.dll
+\\Mac\Home\Desktop\MinCleanAPI\Domain\bin\Debug\net7.0\Domain.pdb
+\\Mac\Home\Desktop\MinCleanAPI\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
+\\Mac\Home\Desktop\MinCleanAPI\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+\\Mac\Home\Desktop\MinCleanAPI\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+\\Mac\Home\Desktop\MinCleanAPI\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+\\Mac\Home\Desktop\MinCleanAPI\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\MinCleanAPI\Domain\obj\Debug\net7.0\Domain.dll
+\\Mac\Home\Desktop\MinCleanAPI\Domain\obj\Debug\net7.0\refint\Domain.dll
+\\Mac\Home\Desktop\MinCleanAPI\Domain\obj\Debug\net7.0\Domain.pdb
+\\Mac\Home\Desktop\MinCleanAPI\Domain\obj\Debug\net7.0\ref\Domain.dll
