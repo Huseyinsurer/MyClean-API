@@ -10,5 +10,6 @@ namespace Infrastructure
             services.AddSingleton<MockDatabase>();
             return services;
         }
+        // Nemo
     }
 }
