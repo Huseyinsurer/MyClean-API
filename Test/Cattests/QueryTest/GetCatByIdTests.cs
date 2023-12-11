@@ -21,7 +21,7 @@ namespace Test.CatTests.QueryTest
         public async Task Handle_ValidId_ReturnsCorrectCat()
         {
             // Arrange
-            var catId = new Guid("87654321-4321-8765-4321-987654321098");
+            var catId = new Guid("12345678-1234-5678-1234-567812345678");
 
             var query = new GetCatByIdQuery(catId);
 
