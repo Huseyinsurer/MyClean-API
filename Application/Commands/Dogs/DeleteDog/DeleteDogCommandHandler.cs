@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Infrastructure.Database;
 using Application.Commands.Dogs;
-using Application.Commands.Dogs.DeleteDog; 
+using Application.Commands.Dogs.DeleteDog;
 
 
 
