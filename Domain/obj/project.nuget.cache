@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S9mABC24SDfkfGZWbZW/7wIX10lVX5pRTOrVw0CazWCMYCPuX8032t8gIUsWaWZUA5LcV3PDuF7i1Xa2vdDHBg==",
+  "dgSpecHash": "LHFiXOOtLS3JE3BqyqZ7FtklhrDNKmR519C2F6XCmGX3KH/UfM6Zz/kZRUUr1KRNM35F7DoXWXXg4+H273yfLQ==",
   "success": true,
-  "projectFilePath": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
