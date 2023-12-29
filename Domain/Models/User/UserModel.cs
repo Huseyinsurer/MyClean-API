@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Domain.Models.User
 {
-    internal class UserModel
+    public class UserModel
     {
+        public Guid Id { get; set; }
+        public string Username { get; set; } = string.Empty;
+        public string Userpassword { get; set; } = string.Empty;
+
+        public List<Ownership> Ownerships { get; set; }
     }
 }

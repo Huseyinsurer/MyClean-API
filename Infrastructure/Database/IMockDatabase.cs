@@ -11,6 +11,6 @@ namespace Infrastructure.Database
     {
         List<Dog> Dogs { get; set; }
         List<Cat> Cats { get; set; }
-        // Lägg till andra entiteter om det behövs
+       
     }
 }
