@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Application.Dtos
+﻿namespace Application.Dtos
 {
-    internal class UserDto
+    public class UserDto
     {
+        public string Username { get; set; }
+        public string Userpassword { get; set; }
     }
 }

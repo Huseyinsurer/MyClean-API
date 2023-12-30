@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Commands\User\**" />
+    <EmbeddedResource Remove="Commands\User\**" />
+    <None Remove="Commands\User\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Commands\Dogs\AddDog\Cat.Dto" />
   </ItemGroup>
 
@@ -18,10 +24,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Commands\User\DeleteUser\" />
   </ItemGroup>
 
 </Project>
