@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.Dtos;
+using MediatR;
 
-namespace Application.Queries.Users
+namespace Application.Queries.Users.Login
 {
-    internal class LoginUserQuery
+    public class LoginUserQuery : IRequest<string>
     {
+        public LoginUserQuery(UserDto loginUser)
+        {
+            LoginUser = loginUser;
+        }
+
+        public UserDto LoginUser { get; }
     }
 }
