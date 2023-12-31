@@ -11,7 +11,6 @@ namespace Infrastructure.Database
         List<Cat> Cats { get; set; }
         List<UserModel> Users { get; set; }
 
-        
-
+        void SaveChanges();
     }
 }
