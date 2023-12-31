@@ -1,7 +1,9 @@
-﻿using Application.Queries.Dogs.GetAll;
+﻿using Application.Commands.Dogs;
 using Domain.Models;
 using Infrastructure.Database;
 using MediatR;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Application.Commands.Dogs
 {
@@ -19,7 +21,9 @@ namespace Application.Commands.Dogs
             Dog dogToCreate = new()
             {
                 Id = Guid.NewGuid(),
-                Name = request.NewDog.Name
+                Name = request.NewDog.Name,
+                Breed = request.NewDog.Breed,
+                Weight = request.NewDog.Weight
             };
 
             _mockDatabase.Dogs.Add(dogToCreate);
