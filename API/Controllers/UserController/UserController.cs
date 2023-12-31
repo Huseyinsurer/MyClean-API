@@ -17,7 +17,14 @@ namespace API.Controllers
             _mediator = mediator;
         }
 
+        /// <summary>
+        /// Log in a user.
+        /// </summary>
+        /// <param name="loginUser">The user credentials.</param>
+        /// <returns>Returns login response.</returns>
         [HttpPost("login")]
+        [ProducesResponseType(typeof(LoginResponse), 200)]
+        [ProducesResponseType(401)]
         public async Task<ActionResult<LoginResponse>> Login([FromBody] UserDto loginUser)
         {
             var command = new LoginUserCommand(loginUser);
