@@ -1,9 +1,7 @@
 ﻿using Domain.Models;
+using Domain.Models.User;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Database
 {
@@ -11,6 +9,8 @@ namespace Infrastructure.Database
     {
         List<Dog> Dogs { get; set; }
         List<Cat> Cats { get; set; }
-        // Lägg till andra entiteter om det behövs
+        List<UserModel> Users { get; set; }
+
+        void SaveChanges();
     }
 }

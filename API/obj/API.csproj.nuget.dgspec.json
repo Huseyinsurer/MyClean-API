@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\API\\API.csproj": {}
+    "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\API\\API.csproj": {}
   },
   "projects": {
-    "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\API\\API.csproj": {
+    "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\API\\API.csproj",
+        "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\API\\API.csproj",
         "packagesPath": "C:\\Users\\huseyinsurer\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\API\\obj\\",
+        "outputPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\huseyinsurer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Application\\Application.csproj": {
-                "projectPath": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Application\\Application.csproj"
+              "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Application\\Application.csproj"
               },
-              "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -47,6 +47,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.12, )"
@@ -79,14 +83,14 @@
         }
       }
     },
-    "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Application\\Application.csproj": {
+    "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\huseyinsurer\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Application\\obj\\",
+        "outputPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\huseyinsurer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -103,11 +107,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Domain\\Domain.csproj": {
-                "projectPath": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Domain\\Domain.csproj"
+              "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Domain\\Domain.csproj"
               },
-              "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -151,14 +155,14 @@
         }
       }
     },
-    "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Domain\\Domain.csproj": {
+    "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\huseyinsurer\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\huseyinsurer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -206,14 +210,14 @@
         }
       }
     },
-    "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\huseyinsurer\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\huseyinsurer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -230,8 +234,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Domain\\Domain.csproj": {
-                "projectPath": "\\\\Mac\\Home\\Desktop\\MinCleanAPI\\Domain\\Domain.csproj"
+              "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API11\\Domain\\Domain.csproj"
               }
             }
           }
