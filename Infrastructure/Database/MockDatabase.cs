@@ -1,5 +1,4 @@
-﻿// MockDatabase.cs
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Domain.Models;
 using Domain.Models.User;
@@ -49,8 +48,10 @@ namespace Infrastructure.Database
             // Lägg till fler användare här
         };
 
-        // Lägg till andra entiteter om det behövs...
-
-        // Övrig kod för MockDatabase
+        public void SaveChanges()
+        {
+            // Implementera sparning av ändringar här, om nödvändigt
+            Console.WriteLine("Changes saved to mock database.");
+        }
     }
 }

@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.Dtos;
+using Domain.Models.User;
+using MediatR;
+using System;
 
-namespace Application.Commands.Users.UpdateUser
+public class UpdateUserCommand : IRequest<UserModel>
 {
-    internal class UpdateUserCommand
+    public Guid UserId { get; }
+    public UserDto UpdatedUser { get; }
+
+    public UpdateUserCommand(Guid userId, UserDto updatedUser)
     {
+        UserId = userId;
+        UpdatedUser = updatedUser;
     }
 }
