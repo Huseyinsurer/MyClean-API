@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Exceptions
 {
-    internal class CatNotExistException
+    public class CatNotExistException : Exception
     {
+        public CatNotExistException(Guid catId)
+            : base($"Cat not Exist with ID: {catId}")
+        {
+        }
     }
 }

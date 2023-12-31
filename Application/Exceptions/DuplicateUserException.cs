@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Exceptions
 {
-    internal class DuplicateUserException
+    public class DuplicateUserException : Exception
     {
+        public DuplicateUserException(string username)
+            : base($"User with username '{username}' already exists.")
+        {
+        }
     }
 }

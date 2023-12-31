@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Exceptions
 {
-    internal class DogNotExistException
+    public class DogNotExistException : Exception
     {
+        public DogNotExistException(Guid dogId)
+            : base($"Dog not Exist with ID: {dogId}")
+        {
+        }
     }
 }

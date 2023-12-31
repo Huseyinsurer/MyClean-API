@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mKrf7PE5Q3oRIXwVet+qUSvshXP2Fl3lK63z3tTzLDTXnPGd9kyldNEauJQneH9wtFYSKGuVOVU+1weZ3+wnOA==",
+  "dgSpecHash": "idsitzy24dMru8N0HTtyZ3HL8yWDAU/2d5NvFA8zjRrSEGZPMLJMgOyAujhI9wrtbQiNseYPx1DXQ4c2Nj3JhA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API3\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API9\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\huseyinsurer\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\huseyinsurer\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
