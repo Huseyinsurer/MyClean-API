@@ -1,11 +1,14 @@
 using Application;
 using Infrastructure.Database;
+using Microsoft.AspNetCore.Authentication.JwtBearer; // Lägg till detta using
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Linq;
+using System.Text; // Lägg till detta using
 using Infrastructure;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +19,22 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Your API", Version = "v1" });
 });
+
+// Lägg till JWT-bearer-autentisering
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        // Konfigurera dina JWT-alternativ här, t.ex. issuer, audience, validering av lösenord, etc.
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            // Exempelinställningar, du måste anpassa detta baserat på din JWT-konfiguration
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Här-kommer-din-hemliga-nyckel")) // Byt ut detta mot din verkliga säkerhetsnyckel
+        };
+    });
 
 // Registrera IMockDatabase
 builder.Services.AddSingleton<IMockDatabase, MockDatabase>();
@@ -34,6 +53,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication(); // Lägg till detta för att aktivera autentisering
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
