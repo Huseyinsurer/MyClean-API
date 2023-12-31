@@ -1,5 +1,4 @@
-﻿// AddCatCommandHandler
-using MediatR;
+﻿using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 using Infrastructure.Database;
@@ -22,6 +21,9 @@ namespace Application.Commands.Cats.AddCat
             {
                 Id = Guid.NewGuid(),
                 Name = request.NewCat.Name,
+                LikesToPlay = request.NewCat.LikesToPlay,
+                Breed = request.NewCat.Breed,
+                Weight = request.NewCat.Weight
                 // Andra egenskaper...
             };
 

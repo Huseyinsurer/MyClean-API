@@ -1,11 +1,8 @@
-﻿using Application.Commands.Dogs.UpdateDog;
+﻿using Application.Commands.Cats.UpdateCat;
 using Domain.Models;
 using Infrastructure.Database;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Application.Commands.Cats.UpdateCat
@@ -18,13 +15,17 @@ namespace Application.Commands.Cats.UpdateCat
         {
             _mockDatabase = mockDatabase;
         }
+
         public Task<Cat> Handle(UpdateCatByIdCommand request, CancellationToken cancellationToken)
         {
-            Cat CatToUpdate = _mockDatabase.Cats.FirstOrDefault(cat => cat.Id == request.Id)!;
+            Cat catToUpdate = _mockDatabase.Cats.FirstOrDefault(cat => cat.Id == request.Id)!;
 
-            CatToUpdate.Name = request.UpdatedCat.Name;
+            catToUpdate.Name = request.UpdatedCat.Name;
+            catToUpdate.LikesToPlay = request.UpdatedCat.LikesToPlay;
+            catToUpdate.Breed = request.UpdatedCat.Breed;
+            catToUpdate.Weight = request.UpdatedCat.Weight;
 
-            return Task.FromResult(CatToUpdate);
+            return Task.FromResult(catToUpdate);
         }
     }
 }
