@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Commands.Dogs
 {
-    internal sealed class AddDogCommandHandler : IRequestHandler<AddDogCommand, Dog>
+     public class AddDogCommandHandler : IRequestHandler<AddDogCommand, Dog>
     {
         private readonly MockDatabase _mockDatabase;
 
