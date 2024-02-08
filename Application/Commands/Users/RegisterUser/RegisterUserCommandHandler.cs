@@ -1,9 +1,10 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
-using MediatR;
-using Domain.Models.User;
-using Application.Dtos;
 using Infrastructure.Database;
+using MediatR;
+using Application.Dtos;
+using Domain.Models.User;
 
 namespace Application.Commands.Users.RegisterUser
 {
@@ -20,14 +21,16 @@ namespace Application.Commands.Users.RegisterUser
         {
             var newUser = new UserModel
             {
-                // Kopiera över egenskaper från UserDto till UserModel
-                // Exempel: Name = request.NewUser.Name,
+                Id = Guid.NewGuid(),
+                Username = request.NewUser.Username,
+                Userpassword = request.NewUser.Userpassword,
+                // Kopiera över andra egenskaper från UserDto till UserModel om det behövs
             };
 
-            // Sparar den nya användaren i din databas
-            // _mockDatabase.Users.Add(newUser);
+            // Spara den nya användaren i din databas
+            _mockDatabase.Users.Add(newUser);
 
-            // Utför andra nödvändiga åtgärder för att spara användaren
+            // Utför andra nödvändiga åtgärder för att spara användaren i din databas
 
             // Returnera den skapade UserModel
             return newUser;

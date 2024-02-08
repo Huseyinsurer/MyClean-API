@@ -1,24 +1,22 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Domain.Models;
-using Domain.Models.User;
+using MySql.EntityFrameworkCore.Extensions;
 using System;
+using Domain.Models.User;
 
 namespace Infrastructure.Database
 {
     public class ApiMainContext : DbContext
     {
+        public ApiMainContext(DbContextOptions<ApiMainContext> options) : base(options)
+        {
+        }
+
         public DbSet<Dog> Dogs { get; set; }
         public DbSet<Cat> Cats { get; set; }
+        public DbSet<Bird> Birds { get; set; } // Lägg till DbSet för Birds
         public DbSet<UserModel> Users { get; set; }
         public DbSet<Ownership> Ownerships { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlite("Data Source=ApiMainContext.db");
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

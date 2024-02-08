@@ -1,34 +1,37 @@
-﻿using Application.Commands.Dogs;
-using Domain.Models;
-using Infrastructure.Database;
-using MediatR;
+﻿using MediatR;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Infrastructure.Repositories;
+using Domain.Models;
+using Infrastructure.Repositories.Dogs;
 
-namespace Application.Commands.Dogs
+
+namespace Application.Commands.Dogs.AddDog
 {
-     public class AddDogCommandHandler : IRequestHandler<AddDogCommand, Dog>
+    public class AddDogCommandHandler : IRequestHandler<AddDogCommand, Dog>
     {
-        private readonly MockDatabase _mockDatabase;
+        private readonly IDogRepository _dogRepository;
 
-        public AddDogCommandHandler(MockDatabase mockDatabase)
+        public AddDogCommandHandler(IDogRepository dogRepository)
         {
-            _mockDatabase = mockDatabase;
+            _dogRepository = dogRepository;
         }
 
-        public Task<Dog> Handle(AddDogCommand request, CancellationToken cancellationToken)
+        public async Task<Dog> Handle(AddDogCommand request, CancellationToken cancellationToken)
         {
-            Dog dogToCreate = new()
+            var newDog = new Dog
             {
                 Id = Guid.NewGuid(),
                 Name = request.NewDog.Name,
                 Breed = request.NewDog.Breed,
                 Weight = request.NewDog.Weight
+                // Andra egenskaper...
             };
 
-            _mockDatabase.Dogs.Add(dogToCreate);
+            await _dogRepository.AddDog(newDog);
 
-            return Task.FromResult(dogToCreate);
+            return newDog;
         }
     }
 }

@@ -1,34 +1,32 @@
 ﻿using MediatR;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Infrastructure.Database;
-using Application.Commands.Dogs;
 using Application.Commands.Dogs.DeleteDog;
 
-
-
-namespace Application.Commands.Dogs
+namespace Application.Commands.Dogs.DeleteDog
 {
     public class DeleteDogCommandHandler : IRequestHandler<DeleteDogCommand, bool>
     {
-        private readonly IMockDatabase _mockDatabase;
+        private readonly ApiMainContext _dbContext;
 
-        public DeleteDogCommandHandler(IMockDatabase mockDatabase)
+        public DeleteDogCommandHandler(ApiMainContext dbContext)
         {
-            _mockDatabase = mockDatabase;
+            _dbContext = dbContext;
         }
 
-        public Task<bool> Handle(DeleteDogCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(DeleteDogCommand request, CancellationToken cancellationToken)
         {
-            var dogToRemove = _mockDatabase.Dogs.FirstOrDefault(d => d.Id == request.DogId);
+            var dogToRemove = await _dbContext.Dogs.FindAsync(request.DogId);
+
             if (dogToRemove != null)
             {
-                _mockDatabase.Dogs.Remove(dogToRemove);
-                return Task.FromResult(true);
+                _dbContext.Dogs.Remove(dogToRemove);
+                await _dbContext.SaveChangesAsync();
+                return true;
             }
 
-            return Task.FromResult(false);
+            return false;
         }
     }
 }

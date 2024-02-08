@@ -1,24 +1,25 @@
-﻿using Application.Exceptions;
-
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using Application.Dtos;
+using Application.Exceptions;
 using Domain.Models.User;
 using Infrastructure.Database;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, UserModel>
 {
-    private readonly IMockDatabase _mockDatabase;
+    private readonly ApiMainContext _dbContext;
 
-    public UpdateUserCommandHandler(IMockDatabase mockDatabase)
+    public UpdateUserCommandHandler(ApiMainContext dbContext)
     {
-        _mockDatabase = mockDatabase;
+        _dbContext = dbContext;
     }
 
     public async Task<UserModel> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
     {
-        var userToUpdate = _mockDatabase.Users.Find(user => user.Id == request.UserId);
+        // Hämta användaren från databasen
+        var userToUpdate = await _dbContext.Users.FindAsync(request.UserId);
 
         if (userToUpdate == null)
         {
@@ -26,13 +27,21 @@ public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, UserM
             throw new UserIdNotExistException(request.UserId);
         }
 
-        // Update user properties
+        // Uppdatera användaregenskaper
         userToUpdate.Username = request.UpdatedUser.Username;
         userToUpdate.Userpassword = request.UpdatedUser.Userpassword;
 
-        // Save changes (mock database does not have a SaveChanges method)
-        // You might not need this line for your specific implementation
+        // Spara ändringar i databasen
+        await _dbContext.SaveChangesAsync(cancellationToken);
 
-        return userToUpdate;
+        // Skapa och returnera UserModel baserat på den uppdaterade användaren
+        var userModel = new UserModel
+        {
+            Id = userToUpdate.Id,
+            Username = userToUpdate.Username,
+            // ... andra egenskaper
+        };
+
+        return userModel;
     }
 }

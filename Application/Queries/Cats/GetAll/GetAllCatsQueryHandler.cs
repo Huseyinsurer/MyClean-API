@@ -1,22 +1,27 @@
-﻿using Application.Queries.Cats.GetAll;
-using Domain.Models;
+﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Infrastructure.Database;
-using MediatR;
+using Domain.Models;
 
-namespace Application.Queries.Cats
+namespace Application.Queries.Cats.GetAll
 {
     internal sealed class GetAllCatsQueryHandler : IRequestHandler<GetAllCatsQuery, List<Cat>>
     {
-        private readonly MockDatabase _mockDatabase;
+        private readonly ApiMainContext _dbContext;
 
-        public GetAllCatsQueryHandler(MockDatabase mockDatabase)
+        public GetAllCatsQueryHandler(ApiMainContext dbContext)
         {
-            _mockDatabase = mockDatabase;
+            _dbContext = dbContext;
         }
-        public Task<List<Cat>> Handle(GetAllCatsQuery request, CancellationToken cancellationToken)
+
+        public async Task<List<Cat>> Handle(GetAllCatsQuery request, CancellationToken cancellationToken)
         {
-            List<Cat> allCatsFromMockDatabase = _mockDatabase.Cats;
-            return Task.FromResult(allCatsFromMockDatabase);
+            List<Cat> allCatsFromDatabase = await _dbContext.Cats.ToListAsync();
+            return allCatsFromDatabase;
         }
     }
 }

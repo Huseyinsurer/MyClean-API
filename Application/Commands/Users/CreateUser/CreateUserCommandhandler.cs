@@ -9,11 +9,11 @@ namespace Application.Commands.Users.RegisterUser
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserModel>
     {
-        private readonly IMockDatabase _mockDatabase;
+        private readonly ApiMainContext _dbContext;
 
-        public CreateUserCommandHandler(IMockDatabase mockDatabase)
+        public CreateUserCommandHandler(ApiMainContext dbContext)
         {
-            _mockDatabase = mockDatabase;
+            _dbContext = dbContext;
         }
 
         public async Task<UserModel> Handle(CreateUserCommand request, CancellationToken cancellationToken)
@@ -27,10 +27,9 @@ namespace Application.Commands.Users.RegisterUser
                 // Example: Name = request.NewUser.Name,
             };
 
-            // Save the new user to your database
-            _mockDatabase.Users.Add(newUser);
-
-            // Perform other necessary actions to save the user
+            // Save the new user to your database using EF Core
+            _dbContext.Users.Add(newUser);
+            await _dbContext.SaveChangesAsync(cancellationToken);
 
             // Return the created UserModel
             return newUser;

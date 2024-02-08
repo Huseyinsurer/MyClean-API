@@ -1,22 +1,27 @@
-﻿using Application.Queries.Dogs.GetAll;
-using Domain.Models;
+﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using Infrastructure.Database;
-using MediatR;
+using Domain.Models;
 
-namespace Application.Queries.Dogs
+namespace Application.Queries.Dogs.GetAll
 {
     internal sealed class GetAllDogsQueryHandler : IRequestHandler<GetAllDogsQuery, List<Dog>>
     {
-        private readonly MockDatabase _mockDatabase;
+        private readonly ApiMainContext _dbContext;
 
-        public GetAllDogsQueryHandler(MockDatabase mockDatabase)
+        public GetAllDogsQueryHandler(ApiMainContext dbContext)
         {
-            _mockDatabase = mockDatabase;
+            _dbContext = dbContext;
         }
-        public Task<List<Dog>> Handle(GetAllDogsQuery request, CancellationToken cancellationToken)
+
+        public async Task<List<Dog>> Handle(GetAllDogsQuery request, CancellationToken cancellationToken)
         {
-            List<Dog> allDogsFromMockDatabase = _mockDatabase.Dogs;
-            return Task.FromResult(allDogsFromMockDatabase);
+            List<Dog> allDogsFromDatabase = await _dbContext.Dogs.ToListAsync();
+            return allDogsFromDatabase;
         }
     }
 }
+

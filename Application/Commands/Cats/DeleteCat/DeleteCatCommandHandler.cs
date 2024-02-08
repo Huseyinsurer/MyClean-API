@@ -1,5 +1,5 @@
-﻿
-using MediatR;
+﻿using MediatR;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Infrastructure.Database;
@@ -8,23 +8,25 @@ namespace Application.Commands.Cats.DeleteCat
 {
     public class DeleteCatCommandHandler : IRequestHandler<DeleteCatCommand, bool>
     {
-        private readonly IMockDatabase _mockDatabase;
+        private readonly ApiMainContext _dbContext;
 
-        public DeleteCatCommandHandler(IMockDatabase mockDatabase)
+        public DeleteCatCommandHandler(ApiMainContext dbContext)
         {
-            _mockDatabase = mockDatabase;
+            _dbContext = dbContext;
         }
 
-        public Task<bool> Handle(DeleteCatCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(DeleteCatCommand request, CancellationToken cancellationToken)
         {
-            var catToRemove = _mockDatabase.Cats.FirstOrDefault(c => c.Id == request.CatId);
+            var catToRemove = _dbContext.Cats.FirstOrDefault(c => c.Id == request.CatId);
             if (catToRemove != null)
             {
-                _mockDatabase.Cats.Remove(catToRemove);
-                return Task.FromResult(true);
+                _dbContext.Cats.Remove(catToRemove);
+                await _dbContext.SaveChangesAsync();
+                return true;
             }
 
-            return Task.FromResult(false);
+            return false;
         }
     }
 }
+
