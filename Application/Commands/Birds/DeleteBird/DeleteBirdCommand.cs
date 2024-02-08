@@ -1,10 +1,9 @@
-﻿
-using MediatR;
+﻿using MediatR;
 using System;
 
 namespace Application.Commands.Birds.DeleteBird
 {
-    public class DeleteBirdCommand : IRequest
+    public class DeleteBirdCommand : IRequest<bool>
     {
         public Guid BirdId { get; }
 
@@ -14,3 +13,4 @@ namespace Application.Commands.Birds.DeleteBird
         }
     }
 }
+

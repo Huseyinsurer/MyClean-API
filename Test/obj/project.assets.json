@@ -59,6 +59,22 @@
           }
         }
       },
+      "Castle.Core/5.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.EventLog": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Castle.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Castle.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "coverlet.collector/3.2.0": {
         "type": "package",
         "build": {
@@ -333,6 +349,22 @@
         },
         "runtime": {
           "lib/netstandard2.0/_._": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.InMemory/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.EntityFrameworkCore.Relational/7.0.14": {
@@ -1045,6 +1077,22 @@
           }
         }
       },
+      "Moq/4.20.70": {
+        "type": "package",
+        "dependencies": {
+          "Castle.Core": "5.1.1"
+        },
+        "compile": {
+          "lib/net6.0/Moq.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Moq.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "MySql.Data/8.3.0": {
         "type": "package",
         "dependencies": {
@@ -1381,6 +1429,32 @@
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Diagnostics.EventLog/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.Diagnostics.EventLog.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Diagnostics.EventLog.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          },
+          "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
         }
       },
       "System.Drawing.Common/6.0.0": {
@@ -1971,6 +2045,30 @@
         "packageIcon.png"
       ]
     },
+    "Castle.Core/5.1.1": {
+      "sha512": "rpYtIczkzGpf+EkZgDr9CClTdemhsrwA/W5hMoPjLkRFnXzH44zDLoovXeKtmxb1ykXK9aJVODSpiJml8CTw2g==",
+      "type": "package",
+      "path": "castle.core/5.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ASL - Apache Software Foundation License.txt",
+        "CHANGELOG.md",
+        "LICENSE",
+        "castle-logo.png",
+        "castle.core.5.1.1.nupkg.sha512",
+        "castle.core.nuspec",
+        "lib/net462/Castle.Core.dll",
+        "lib/net462/Castle.Core.xml",
+        "lib/net6.0/Castle.Core.dll",
+        "lib/net6.0/Castle.Core.xml",
+        "lib/netstandard2.0/Castle.Core.dll",
+        "lib/netstandard2.0/Castle.Core.xml",
+        "lib/netstandard2.1/Castle.Core.dll",
+        "lib/netstandard2.1/Castle.Core.xml",
+        "readme.txt"
+      ]
+    },
     "coverlet.collector/3.2.0": {
       "sha512": "xjY8xBigSeWIYs4I7DgUHqSNoGqnHi7Fv7/7RZD02rvZyG3hlsjnQKiVKVWKgr9kRKgmV+dEfu8KScvysiC0Wg==",
       "type": "package",
@@ -2473,6 +2571,20 @@
         "lib/netstandard2.0/_._",
         "microsoft.entityframeworkcore.analyzers.7.0.14.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/7.0.0": {
+      "sha512": "di7I9EUk+ibG2N7Ns4ecUK6Mz7HED7qik3jSbBIhdKXcU3ansXJEAAlOdM7xfRDzozs5elSLk9qQuHCbYwI1yA==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.inmemory/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.xml",
+        "microsoft.entityframeworkcore.inmemory.7.0.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/7.0.14": {
@@ -3304,6 +3416,27 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Moq/4.20.70": {
+      "sha512": "4rNnAwdpXJBuxqrOCzCyICXHSImOTRktCgCWXWykuF1qwoIsVvEnR7PjbMk/eLOxWvhmj5Kwt+kDV3RGUYcNwg==",
+      "type": "package",
+      "path": "moq/4.20.70",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net462/Moq.dll",
+        "lib/net462/Moq.xml",
+        "lib/net6.0/Moq.dll",
+        "lib/net6.0/Moq.xml",
+        "lib/netstandard2.0/Moq.dll",
+        "lib/netstandard2.0/Moq.xml",
+        "lib/netstandard2.1/Moq.dll",
+        "lib/netstandard2.1/Moq.xml",
+        "moq.4.20.70.nupkg.sha512",
+        "moq.nuspec",
+        "readme.md"
+      ]
+    },
     "MySql.Data/8.3.0": {
       "sha512": "bAQlkLYvTYt5MtXAgHGURSBSUWynIvyN2FVQFUg51I2grxsOfnJSyGvO7YsDRnU7IvUNfMdxq8rNXiP5P4hMlw==",
       "type": "package",
@@ -3781,6 +3914,37 @@
         "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.xml",
         "system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512",
         "system.diagnostics.diagnosticsource.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Diagnostics.EventLog/6.0.0": {
+      "sha512": "lcyUiXTsETK2ALsZrX+nWuHSIQeazhqPphLfaRxzdGaG93+0kELqpgEHtwWOlQe7+jSFnKwaCAgL4kjeZCQJnw==",
+      "type": "package",
+      "path": "system.diagnostics.eventlog/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Diagnostics.EventLog.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Diagnostics.EventLog.dll",
+        "lib/net461/System.Diagnostics.EventLog.xml",
+        "lib/net6.0/System.Diagnostics.EventLog.dll",
+        "lib/net6.0/System.Diagnostics.EventLog.xml",
+        "lib/netcoreapp3.1/System.Diagnostics.EventLog.dll",
+        "lib/netcoreapp3.1/System.Diagnostics.EventLog.xml",
+        "lib/netstandard2.0/System.Diagnostics.EventLog.dll",
+        "lib/netstandard2.0/System.Diagnostics.EventLog.xml",
+        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll",
+        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll",
+        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.xml",
+        "runtimes/win/lib/netcoreapp3.1/System.Diagnostics.EventLog.Messages.dll",
+        "runtimes/win/lib/netcoreapp3.1/System.Diagnostics.EventLog.dll",
+        "runtimes/win/lib/netcoreapp3.1/System.Diagnostics.EventLog.xml",
+        "system.diagnostics.eventlog.6.0.0.nupkg.sha512",
+        "system.diagnostics.eventlog.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -5007,7 +5171,9 @@
     "net7.0": [
       "Application >= 1.0.0",
       "Infrastructure >= 1.0.0",
+      "Microsoft.EntityFrameworkCore.InMemory >= 7.0.0",
       "Microsoft.NET.Test.Sdk >= 17.7.1",
+      "Moq >= 4.20.70",
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.6.1",
       "NUnit3TestAdapter >= 4.4.2",
@@ -5020,11 +5186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Test\\Test.csproj",
+      "projectUniqueName": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API810\\Test\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Test\\Test.csproj",
+      "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API810\\Test\\Test.csproj",
       "packagesPath": "C:\\Users\\huseyinsurer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Test\\obj\\",
+      "outputPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API810\\Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\huseyinsurer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5041,11 +5207,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Application\\Application.csproj"
+            "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API810\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API810\\Application\\Application.csproj"
             },
-            "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API810\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API810\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -5060,9 +5226,17 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.InMemory": {
+            "target": "Package",
+            "version": "[7.0.0, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[17.7.1, )"
+          },
+          "Moq": {
+            "target": "Package",
+            "version": "[4.20.70, )"
           },
           "NUnit": {
             "target": "Package",
