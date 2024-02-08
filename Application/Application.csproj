@@ -26,4 +26,10 @@
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Commands\Birds\AddBird\" />
+    <Folder Include="Commands\Birds\DeleteBird\" />
+    <Folder Include="Commands\Birds\UpdateBird\" />
+  </ItemGroup>
+
 </Project>
