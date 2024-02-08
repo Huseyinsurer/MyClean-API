@@ -14,7 +14,7 @@ namespace Infrastructure.Database
 
         public DbSet<Dog> Dogs { get; set; }
         public DbSet<Cat> Cats { get; set; }
-        public DbSet<Bird> Birds { get; set; } // Lägg till DbSet för Birds
+        public DbSet<Bird> Birds { get; set; }
         public DbSet<UserModel> Users { get; set; }
         public DbSet<Ownership> Ownerships { get; set; }
 
