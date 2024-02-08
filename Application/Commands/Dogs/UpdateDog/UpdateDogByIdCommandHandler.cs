@@ -1,7 +1,6 @@
 ﻿using Domain.Models;
 using Infrastructure.Database;
 using MediatR;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -9,22 +8,27 @@ namespace Application.Commands.Dogs.UpdateDog
 {
     internal class UpdateDogByIdCommandHandler : IRequestHandler<UpdateDogByIdCommand, Dog>
     {
-        private readonly MockDatabase _mockDatabase;
+        private readonly ApiMainContext _dbContext;
 
-        public UpdateDogByIdCommandHandler(MockDatabase mockDatabase)
+        public UpdateDogByIdCommandHandler(ApiMainContext dbContext)
         {
-            _mockDatabase = mockDatabase;
+            _dbContext = dbContext;
         }
 
-        public Task<Dog> Handle(UpdateDogByIdCommand request, CancellationToken cancellationToken)
+        public async Task<Dog> Handle(UpdateDogByIdCommand request, CancellationToken cancellationToken)
         {
-            Dog dogToUpdate = _mockDatabase.Dogs.FirstOrDefault(dog => dog.Id == request.Id)!;
+            var dogToUpdate = await _dbContext.Dogs.FindAsync(request.Id);
 
-            dogToUpdate.Name = request.UpdatedDog.Name;
-            dogToUpdate.Breed = request.UpdatedDog.Breed;
-            dogToUpdate.Weight = request.UpdatedDog.Weight;
+            if (dogToUpdate != null)
+            {
+                dogToUpdate.Name = request.UpdatedDog.Name;
+                dogToUpdate.Breed = request.UpdatedDog.Breed;
+                dogToUpdate.Weight = request.UpdatedDog.Weight;
 
-            return Task.FromResult(dogToUpdate);
+                await _dbContext.SaveChangesAsync();
+            }
+
+            return dogToUpdate;
         }
     }
 }

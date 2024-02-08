@@ -1,21 +1,23 @@
 ﻿using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
-using Infrastructure.Database;
+using Infrastructure.Repositories;
 using Domain.Models;
+using Infrastructure.Repositories.Cats;
+
 
 namespace Application.Commands.Cats.AddCat
 {
     public class AddCatCommandHandler : IRequestHandler<AddCatCommand, Cat>
     {
-        private readonly IMockDatabase _mockDatabase;
+        private readonly ICatRepository _catRepository;
 
-        public AddCatCommandHandler(IMockDatabase mockDatabase)
+        public AddCatCommandHandler(ICatRepository catRepository)
         {
-            _mockDatabase = mockDatabase;
+            _catRepository = catRepository;
         }
 
-        public Task<Cat> Handle(AddCatCommand request, CancellationToken cancellationToken)
+        public async Task<Cat> Handle(AddCatCommand request, CancellationToken cancellationToken)
         {
             var newCat = new Cat
             {
@@ -27,10 +29,9 @@ namespace Application.Commands.Cats.AddCat
                 // Andra egenskaper...
             };
 
-            _mockDatabase.Cats.Add(newCat);
+            await _catRepository.AddCat(newCat);
 
-            return Task.FromResult(newCat);
+            return newCat;
         }
     }
 }
-

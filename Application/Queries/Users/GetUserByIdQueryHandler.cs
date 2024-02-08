@@ -1,28 +1,28 @@
-﻿using System;
-using System.Linq;
+﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
-using Domain.Models.User;
 using Infrastructure.Database;
-using MediatR;
+using Domain.Models.User;
 
 namespace Application.Queries.Users.GetUserById
 {
     public class GetUserByIdQueryHandler : IRequestHandler<GetUserByIdQuery, UserModel>
     {
-        private readonly IMockDatabase _mockDatabase;
+        private readonly ApiMainContext _dbContext;
 
-        public GetUserByIdQueryHandler(IMockDatabase mockDatabase)
+        public GetUserByIdQueryHandler(ApiMainContext dbContext)
         {
-            _mockDatabase = mockDatabase;
+            _dbContext = dbContext;
         }
 
-        public Task<UserModel> Handle(GetUserByIdQuery request, CancellationToken cancellationToken)
+        public async Task<UserModel> Handle(GetUserByIdQuery request, CancellationToken cancellationToken)
         {
             // Hämta användaren från databasen baserat på användar-ID
-            var user = _mockDatabase.Users.FirstOrDefault(u => u.Id == request.UserId);
+            var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Id == request.UserId);
 
-            return Task.FromResult(user);
+            return user;
         }
     }
 }
+

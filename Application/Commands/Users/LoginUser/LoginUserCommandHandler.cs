@@ -1,5 +1,4 @@
-﻿// LoginUserCommandHandler.cs
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -7,39 +6,42 @@ using Application.Commands.Users.Login;
 using Application.Dtos;
 using Infrastructure.Database;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Commands.Users.LoginUser
 {
     public class LoginUserCommandHandler : IRequestHandler<LoginUserCommand, LoginResponse>
     {
-        private readonly IMockDatabase _mockDatabase;
+        private readonly ApiMainContext _dbContext;
 
-        public LoginUserCommandHandler(IMockDatabase mockDatabase)
+        public LoginUserCommandHandler(ApiMainContext dbContext)
         {
-            _mockDatabase = mockDatabase ?? throw new ArgumentNullException(nameof(mockDatabase));
+            _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
-        public Task<LoginResponse> Handle(LoginUserCommand request, CancellationToken cancellationToken)
+        public async Task<LoginResponse> Handle(LoginUserCommand request, CancellationToken cancellationToken)
         {
             // Hämta användaren från databasen (mockad här)
-            var userFromDatabase = _mockDatabase.Users.FirstOrDefault(u => u.Username == request.LoginUser.Username);
+            var userFromDatabase = await _dbContext.Users
+                .FirstOrDefaultAsync(u => u.Username == request.LoginUser.Username, cancellationToken);
 
             if (userFromDatabase != null && userFromDatabase.Userpassword == request.LoginUser.Userpassword)
             {
                 // Inloggningen lyckades
-                return Task.FromResult(new LoginResponse
+                return new LoginResponse
                 {
                     IsSuccessful = true,
                     UserId = userFromDatabase.Id
-                });
+                };
             }
 
             // Inloggningen misslyckades
-            return Task.FromResult(new LoginResponse
+            return new LoginResponse
             {
                 IsSuccessful = false,
                 UserId = Guid.Empty // Använd ett standardvärde för misslyckade inloggningar
-            });
+            };
         }
     }
 }
+

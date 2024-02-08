@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\API\\API.csproj": {}
+    "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\API\\API.csproj": {
+    "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\API\\API.csproj",
+        "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\API\\API.csproj",
         "packagesPath": "C:\\Users\\huseyinsurer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\API\\obj\\",
+        "outputPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\huseyinsurer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Application\\Application.csproj"
+              "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Application\\Application.csproj"
               },
-              "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -97,14 +97,14 @@
         }
       }
     },
-    "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Application\\Application.csproj": {
+    "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\huseyinsurer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Application\\obj\\",
+        "outputPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\huseyinsurer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -121,11 +121,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Domain\\Domain.csproj"
+              "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -169,14 +169,14 @@
         }
       }
     },
-    "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Domain\\Domain.csproj": {
+    "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\huseyinsurer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\huseyinsurer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -236,14 +236,14 @@
         }
       }
     },
-    "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\huseyinsurer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\huseyinsurer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -260,8 +260,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Domain\\Domain.csproj"
+              "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API33\\Domain\\Domain.csproj"
               }
             }
           }
