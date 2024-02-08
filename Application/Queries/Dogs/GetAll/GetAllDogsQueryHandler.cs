@@ -8,7 +8,7 @@ using Domain.Models;
 
 namespace Application.Queries.Dogs.GetAll
 {
-    internal sealed class GetAllDogsQueryHandler : IRequestHandler<GetAllDogsQuery, List<Dog>>
+    public class GetAllDogsQueryHandler : IRequestHandler<GetAllDogsQuery, List<Dog>>
     {
         private readonly ApiMainContext _dbContext;
 

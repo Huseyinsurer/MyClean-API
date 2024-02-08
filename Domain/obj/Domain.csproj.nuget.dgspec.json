@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API810\\Domain\\Domain.csproj": {}
+    "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API111111111111111\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API810\\Domain\\Domain.csproj": {
+    "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API111111111111111\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API810\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API111111111111111\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API810\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API111111111111111\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\huseyinsurer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API810\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-API111111111111111\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\huseyinsurer\\AppData\\Roaming\\NuGet\\NuGet.Config",

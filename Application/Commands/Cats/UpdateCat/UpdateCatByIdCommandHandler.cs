@@ -1,13 +1,15 @@
-﻿using MediatR;
+﻿using Infrastructure.Database;
+using MediatR;
+using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Infrastructure.Database;
+using Application.Dtos;
 using Domain.Models;
 
 namespace Application.Commands.Cats.UpdateCat
 {
-    internal class UpdateCatByIdCommandHandler : IRequestHandler<UpdateCatByIdCommand, Cat>
+    public class UpdateCatByIdCommandHandler : IRequestHandler<UpdateCatByIdCommand, Cat>
     {
         private readonly ApiMainContext _dbContext;
 
@@ -18,7 +20,7 @@ namespace Application.Commands.Cats.UpdateCat
 
         public async Task<Cat> Handle(UpdateCatByIdCommand request, CancellationToken cancellationToken)
         {
-            Cat catToUpdate = _dbContext.Cats.FirstOrDefault(cat => cat.Id == request.Id)!;
+            Cat catToUpdate = _dbContext.Cats.FirstOrDefault(cat => cat.Id == request.Id);
 
             if (catToUpdate != null)
             {

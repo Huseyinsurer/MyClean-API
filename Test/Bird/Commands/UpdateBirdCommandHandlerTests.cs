@@ -2,54 +2,41 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Application.Commands.Birds.UpdateBird;
+using Application.Dtos;
 using Domain.Models;
-using Infrastructure.Database;
 using Infrastructure.Repositories;
-using Infrastructure.Repositories.Birds;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;
 
-namespace Test.Birds.Commands
+[TestFixture]
+public class UpdateBirdCommandHandlerTests
 {
-    [TestFixture]
-    public class UpdateBirdCommandHandlerTests
+    [Test]
+    public async Task UpdateBirdCommandHandler_ShouldUpdateBird()
     {
-        private ApiMainContext _dbContext;
-        private IBirdRepository _birdRepository;
+        // Arrange
+        var birdRepositoryMock = new Mock<IBirdRepository>();
+        var handler = new UpdateBirdCommandHandler(birdRepositoryMock.Object);
 
-        [SetUp]
-        public void Setup()
-        {
-            var options = new DbContextOptionsBuilder<ApiMainContext>()
-                .UseInMemoryDatabase("TestDatabase")
-                .Options;
+        var birdId = Guid.NewGuid();
+        var existingBird = new Bird { Id = birdId, Name = "OldBird", CanFly = true, Color = "Blue" };
+        birdRepositoryMock.Setup(repo => repo.GetBirdById(birdId)).ReturnsAsync(existingBird);
 
-            _dbContext = new ApiMainContext(options);
-            var loggerMock = new Mock<ILogger<BirdRepository>>();
-            _birdRepository = new BirdRepository(_dbContext, loggerMock.Object);
-        }
+        var updatedBirdDto = new BirdDto { CanFly = false, Color = "Red" };
+        var command = new UpdateBirdCommand(birdId, updatedBirdDto);
 
-        [Test]
-        public async Task UpdateBirdCommandHandler_ShouldUpdateBird()
-        {
-            // ... (resten av testkoden som tidigare)
-        }
+        // Act
+        var result = await handler.Handle(command, CancellationToken.None);
 
-        [Test]
-        public async Task UpdateBirdCommandHandler_ShouldReturnNull_WhenBirdNotFound()
-        {
-            // ... (resten av testkoden som tidigare)
-        }
+        // Assert
+        Assert.NotNull(result);
+        Assert.AreEqual(birdId, result.Id);
+        Assert.AreEqual(existingBird.Name, result.Name);
+        Assert.AreEqual(updatedBirdDto.CanFly, result.CanFly);
+        Assert.AreEqual(updatedBirdDto.Color, result.Color);
 
-        // Add more tests as needed
-
-        [TearDown]
-        public void TearDown()
-        {
-            _dbContext.Dispose();
-        }
+        // Verify that the repository method was called
+        birdRepositoryMock.Verify(repo => repo.UpdateBird(existingBird), Times.Once);
     }
 }
 
