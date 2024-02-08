@@ -9,7 +9,7 @@ using Domain.Models;
 
 namespace Application.Queries.Cats.GetAll
 {
-    internal sealed class GetAllCatsQueryHandler : IRequestHandler<GetAllCatsQuery, List<Cat>>
+    public sealed class GetAllCatsQueryHandler : IRequestHandler<GetAllCatsQuery, List<Cat>>
     {
         private readonly ApiMainContext _dbContext;
 
