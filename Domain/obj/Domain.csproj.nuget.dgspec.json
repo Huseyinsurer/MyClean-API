@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-APIIIIII\\Domain\\Domain.csproj": {}
+    "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-APIIIIII\\Domain\\Domain.csproj": {
+    "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-APIIIIII\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-APIIIIII\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\huseyinsurer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\huseyinsurer\\Source\\Repos\\MyClean-APIIIIII\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\huseyinsurer\\source\\repos\\MyClean-API444\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\huseyinsurer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,18 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -55,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
