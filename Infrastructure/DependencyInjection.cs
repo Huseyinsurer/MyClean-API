@@ -16,6 +16,8 @@ namespace Infrastructure
             services.AddScoped<IBirdRepository, BirdRepository>();
             services.AddScoped<ICatRepository, CatRepository>();
             services.AddScoped<IDogRepository, DogRepository>();
+            services.AddScoped<IUserAnimalRepository, UserAnimalRepository>();
+
 
             // Registrera din DbContext för SQLite
             services.AddDbContext<ApiMainContext>(options =>
