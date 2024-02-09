@@ -1,29 +1,26 @@
 ﻿using System;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Application.Commands.Users.Login;
 using Application.Dtos;
-using Infrastructure.Database;
+using Infrastructure.Repositories;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace Application.Commands.Users.LoginUser
 {
     public class LoginUserCommandHandler : IRequestHandler<LoginUserCommand, LoginResponse>
     {
-        private readonly ApiMainContext _dbContext;
+        private readonly IUserRepository _userRepository;
 
-        public LoginUserCommandHandler(ApiMainContext dbContext)
+        public LoginUserCommandHandler(IUserRepository userRepository)
         {
-            _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
+            _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
         }
 
         public async Task<LoginResponse> Handle(LoginUserCommand request, CancellationToken cancellationToken)
         {
             // Hämta användaren från databasen (mockad här)
-            var userFromDatabase = await _dbContext.Users
-                .FirstOrDefaultAsync(u => u.Username == request.LoginUser.Username, cancellationToken);
+            var userFromDatabase = await _userRepository.GetUserByUsername(request.LoginUser.Username);
 
             if (userFromDatabase != null && userFromDatabase.Userpassword == request.LoginUser.Userpassword)
             {
@@ -44,4 +41,3 @@ namespace Application.Commands.Users.LoginUser
         }
     }
 }
-

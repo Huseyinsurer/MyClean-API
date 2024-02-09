@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text; // Lägg till detta using
 using Infrastructure;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,9 +37,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-// Registrera IMockDatabase
-builder.Services.AddSingleton<IMockDatabase, MockDatabase>();
-
+// Lägg till din databas (ApiMainContext) som en tjänst med SQLite
+builder.Services.AddDbContext<ApiMainContext>(options =>
+{
+    options.UseSqlite("Data Source=mydatabase.db");
+});
 // Registrera MediatR
 builder.Services.AddApplication().AddInfrastructure();
 

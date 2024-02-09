@@ -7,7 +7,12 @@ using Infrastructure.Database;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, UserModel>
+
+
+namespace Application.Commands.Users.UpdateUser
+{
+
+    public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, UserModel>
 {
     private readonly ApiMainContext _dbContext;
 
@@ -44,4 +49,5 @@ public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, UserM
 
         return userModel;
     }
+}
 }

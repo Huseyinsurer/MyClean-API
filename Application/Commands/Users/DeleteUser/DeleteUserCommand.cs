@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿// DeleteUserCommand.cs
+using MediatR;
 using System;
 
 namespace Application.Commands.Users.Delete

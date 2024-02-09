@@ -12,5 +12,4 @@ namespace Application.Commands.Users.Login
 
         public UserDto LoginUser { get; }
     }
-
 }

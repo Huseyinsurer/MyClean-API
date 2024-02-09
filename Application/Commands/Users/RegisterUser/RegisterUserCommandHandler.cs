@@ -10,11 +10,11 @@ namespace Application.Commands.Users.RegisterUser
 {
     public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, UserModel>
     {
-        private readonly IMockDatabase _mockDatabase;
+        private readonly ApiMainContext _dbContext;
 
-        public RegisterUserCommandHandler(IMockDatabase mockDatabase)
+        public RegisterUserCommandHandler(ApiMainContext dbContext)
         {
-            _mockDatabase = mockDatabase;
+            _dbContext = dbContext;
         }
 
         public async Task<UserModel> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
@@ -28,9 +28,10 @@ namespace Application.Commands.Users.RegisterUser
             };
 
             // Spara den nya användaren i din databas
-            _mockDatabase.Users.Add(newUser);
+            _dbContext.Users.Add(newUser);
 
             // Utför andra nödvändiga åtgärder för att spara användaren i din databas
+            await _dbContext.SaveChangesAsync(cancellationToken);
 
             // Returnera den skapade UserModel
             return newUser;
