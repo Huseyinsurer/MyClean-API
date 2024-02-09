@@ -1,4 +1,5 @@
-﻿using System;
+﻿// DeleteUserCommandHandler.cs
+using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -32,22 +33,20 @@ namespace Application.Commands.Users.Delete
                     // Spara ändringarna i databasen
                     await _dbContext.SaveChangesAsync(cancellationToken);
 
-                    return new DeleteUserResult();
+                    return new DeleteUserResult { IsSuccess = true, Message = "Deletion was successful." };
                 }
                 else
                 {
                     // Användaren finns inte
-                    // Här kan du välja att kasta ett undantag eller göra något annat
-                    return null;
+                    return new DeleteUserResult { IsSuccess = false, Message = "User not found." };
                 }
             }
             catch (Exception ex)
             {
                 // Hantera fel om det uppstår
                 // Logga eller kasta vidare exceptionen beroende på din implementering
-                return null;
+                return new DeleteUserResult { IsSuccess = false, Message = $"Deletion failed. Message: {ex.Message}" };
             }
         }
     }
 }
-

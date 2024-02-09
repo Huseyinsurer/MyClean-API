@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Application.Queries.Birds.GetAllBirds;
@@ -45,12 +46,15 @@ namespace Test.Birds.Queries
             // Act
             var result = await _handler.Handle(query, CancellationToken.None);
 
+            // Logga antalet fåglar som returnerats
+            Console.WriteLine($"Number of birds returned: {result.Count}");
+
             // Assert
             Assert.NotNull(result);
             Assert.AreEqual(3, result.Count);
         }
 
-        // Add more tests as needed
+        
 
         [TearDown]
         public void TearDown()

@@ -3,6 +3,7 @@ using Infrastructure.Repositories;
 using Infrastructure.Repositories.Birds;
 using Infrastructure.Repositories.Cats;
 using Infrastructure.Repositories.Dogs;
+using Infrastructure.Repositories.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -17,6 +18,8 @@ namespace Infrastructure
             services.AddScoped<ICatRepository, CatRepository>();
             services.AddScoped<IDogRepository, DogRepository>();
             services.AddScoped<IUserAnimalRepository, UserAnimalRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+
 
 
             // Registrera din DbContext för SQLite
